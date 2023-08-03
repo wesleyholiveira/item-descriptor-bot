@@ -25,7 +25,6 @@ docker run <nome-da-imagem>-redis-seed
 `python ./scripts/processor.py pt-br`
 
 ## Configurações
-### Docker
 - Copie o arquivo **.env.example** e renomeie para **.env**
 - Altere os dados no **.env** com os tokens/client_id da sua conta na Twitch:
 ```
@@ -38,9 +37,4 @@ TWITCH_TOKEN=
 
 - Atualize no **.env** para a linguagem que deseja:
 `DESCRIPTION_LANGUAGE=pt-br`
-
-### Standalone
-- Altere o arquivo **index.mjs** e substitua nas *linhas 9/10/15* com as informações do seu host redis e da twitch:
-
-![Captura de tela 2023-08-03 015751](https://github.com/wesleyholiveira/item-descriptor-bot/assets/2742138/402b510c-8c74-44d7-981b-60a8437e7dce)
 
