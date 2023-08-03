@@ -40,7 +40,5 @@ TWITCH_TOKEN=
 - Update in **.env** the language you want to use:
 `DESCRIPTION_LANGUAGE=en`
 
-![Captura de tela 2023-08-03 015751](https://github.com/wesleyholiveira/item-descriptor-bot/assets/2742138/402b510c-8c74-44d7-981b-60a8437e7dce)
-
 
 
