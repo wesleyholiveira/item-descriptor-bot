@@ -1,5 +1,5 @@
 # Molesker Item's Descriptor
-Bot para a twitch voltado para consultar os efeitos do isaac pelo chat utilizando as descrições do mod: (https://github.com/wofsauge/External-Item-Descriptions)[https://github.com/wofsauge/External-Item-Descriptions]
+Bot para a twitch voltado para consultar os efeitos do isaac pelo chat utilizando as descrições do mod: https://github.com/wofsauge/External-Item-Descriptions
 
 ## Como rodar o projeto?
 ### Docker
@@ -32,9 +32,11 @@ docker run <nome-da-imagem>-redis-seed
 TWITCH_USERNAME=
 TWITCH_TOKEN=
 ```
-- Caso queira uma outra lingua crie uma pasta nova dentro de: *data/raw*, insira os arquivos conforme foi previamente criado para **en/pt-br**
+- Caso queira uma outra lingua crie uma pasta nova dentro de: *data/raw*, insira os arquivos conforme foi previamente criado para **en/pt-br**:
+  ![Captura de tela 2023-08-03 015751](https://github.com/wesleyholiveira/item-descriptor-bot/assets/2742138/402b510c-8c74-44d7-981b-60a8437e7dce)
 - Atualize no **.env** para a linguagem que deseja:
 `DESCRIPTION_LANGUAGE=pt-br`
 
 ### Standalone
 - Altere o arquivo **index.mjs** e substitua nas *linhas 9/10/15* com as informações do seu host redis e da twitch:
+![Captura de tela 2023-08-03 015947](https://github.com/wesleyholiveira/item-descriptor-bot/assets/2742138/b033968d-1afe-44fa-8def-fe3fe7892ef1)
