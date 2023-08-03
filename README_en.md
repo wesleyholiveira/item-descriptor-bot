@@ -27,7 +27,6 @@ pip install -r ./scripts/requirements.txt
 `python ./scripts/processor.py pt-br`
 
 ## Configurations
-### Docker
 - Copy the **.env.example** file and rename it to **.env**
 - Update the data in .env with your Twitch account tokens/client_id:
 ```
@@ -40,9 +39,6 @@ TWITCH_TOKEN=
 
 - Update in **.env** the language you want to use:
 `DESCRIPTION_LANGUAGE=en`
-
-### Standalone
-Modify the **index.mjs** file and replace the information in lines *9/10/15* with your Redis host and Twitch details:
 
 ![Captura de tela 2023-08-03 015751](https://github.com/wesleyholiveira/item-descriptor-bot/assets/2742138/402b510c-8c74-44d7-981b-60a8437e7dce)
 
