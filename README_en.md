@@ -35,11 +35,16 @@ TWITCH_USERNAME=
 TWITCH_TOKEN=
 ```
 - If you want another language, create a new folder inside: *data/raw*, insert the files as previously created for **en/pt-br**:
+
+![Captura de tela 2023-08-03 015947](https://github.com/wesleyholiveira/item-descriptor-bot/assets/2742138/b033968d-1afe-44fa-8def-fe3fe7892ef1)
+
 - Update in **.env** the language you want to use:
 `DESCRIPTION_LANGUAGE=en`
 
 ### Standalone
-Modify the **index.mjs** file and replace the information in lines *9/10/15* with your Redis host and Twitch details.
+Modify the **index.mjs** file and replace the information in lines *9/10/15* with your Redis host and Twitch details:
+
+![Captura de tela 2023-08-03 015751](https://github.com/wesleyholiveira/item-descriptor-bot/assets/2742138/402b510c-8c74-44d7-981b-60a8437e7dce)
 
 
 
