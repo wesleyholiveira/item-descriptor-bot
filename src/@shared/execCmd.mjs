@@ -2,9 +2,9 @@ const cache = {};
 
 export default async (cmd, args, redisRepository) => {
 	try {
-		const itemName = args.join(' ').replace(/['"]+/g, '');
-		const items = await redisRepository.getItems(itemName);
+		const itemName = args.join(' ').replace(/['"*+\-=!]+/g, '');
 
+		const items = await redisRepository.getItems(itemName);
 		if (args.length < 1) {
 			return {
 				code: 0,

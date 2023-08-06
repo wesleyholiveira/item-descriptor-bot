@@ -14,10 +14,22 @@ export default class {
 			SCORER: 'TFIDF.DOCNORM'
 		};
 
+
+		console.log(`Fazendo exact matching para a chave: '${this.key}:${input}'`);
+		const exactMatching = await this.client.ft.search(
+			this.key,
+			`"${input}"`,
+			queryOptions
+		);
+
+		if (exactMatching.total > 0) {
+			return this.extract(exactMatching.documents);
+		}
+
+		console.warn('Exact matching falhou...');
+		console.log(`Fazendo fuzzy matching para a chave: '${this.key}:${input}'`);
 		const splittedString = input.split(' ');
 		const fuzzyInput = splittedString.map((s) => `%${s}%`).join();
-
-		console.log(`Fazendo fuzzy matching para a chave: '${this.key}:${input}'`);
 		const fuzzyMatching = await this.client.ft.search(
 			this.key,
 			fuzzyInput,
@@ -28,7 +40,8 @@ export default class {
 			return this.extract(fuzzyMatching.documents);
 		}
 		
-		console.warn('Fuzzy matching falhou...');
+
+		console.warn('Exact matching falhou..')
 		console.log(`Fazendo pattern matching para a chave: '${this.key}:${input}'`);
 		const patternInput = fuzzyInput.replaceAll('%', '*');
 		const patternMatching = await this.client.ft.search(
