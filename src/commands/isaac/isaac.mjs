@@ -10,7 +10,7 @@ export default async (name, args, redisClient) => {
 		if (!subCmd) {
 			const redisRepository = new RedisRepository(redisClient, 'items');
 			const item = await execCmd(name, args, redisRepository);
-			if (item.msg.title !== undefined && item.msg.description !== undefined) {
+			if (item.msg?.title !== undefined && item.msg?.description !== undefined) {
 				return {
 					code: item.code,
 					msg: `Name: ${item.msg.title} / Effect: ${item.msg.description}`,
@@ -22,7 +22,7 @@ export default async (name, args, redisClient) => {
 
 		const redisRepository = new RedisRepository(redisClient, `items:${subcommand}`);
 		const subItem = await subCmd(subcommand, args.slice(1), redisRepository);
-		if (subItem.msg.title !== undefined && subItem.msg.description !== undefined) {
+		if (subItem.msg?.title !== undefined && subItem.msg?.description !== undefined) {
 			return {
 				code: subItem.code,
 				msg: `Name: ${subItem.msg.title} / Effect: ${subItem.msg.description}`,
