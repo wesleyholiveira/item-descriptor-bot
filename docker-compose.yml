@@ -1,0 +1,32 @@
+version: '3.10'
+services:
+    app:
+        build:
+            context: .
+            target: bot
+        depends_on:
+            - redis
+        env_file: .env
+        ports:
+            - 3000:3000
+        volumes:
+            - .:/usr/src/app
+
+    redis:
+        image: redis/redis-stack-server:latest
+        ports:
+            - 6379:6379
+        volumes:
+            - redis_data:/data
+
+    redis-seed:
+        build:
+            context: .
+            target: redis-seed
+        env_file: .env
+        depends_on:
+            - redis
+
+volumes:
+    redis_data:
+    node_modules: {}
