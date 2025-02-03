@@ -1,5 +1,5 @@
 # Molesker Item's Descriptor
-Bot for Twitch focused on querying Isaac's effects through chat using descriptions from the mod: https://github.com/wofsauge/External-Item-Descriptions
+Bot for Twitch/Youtube focused on querying Isaac's effects through chat using descriptions from the mod: https://github.com/wofsauge/External-Item-Descriptions
 
 ## How to run the project?
 ### Docker

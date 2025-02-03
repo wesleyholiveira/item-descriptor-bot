@@ -1,5 +1,5 @@
 # Molesker Item's Descriptor
-Bot para a twitch voltado para consultar os efeitos do **The Binding of Isaac** pelo chat utilizando as descrições do mod: https://github.com/wofsauge/External-Item-Descriptions
+Bot para a Twitch/Youtube voltado para consultar os efeitos do **The Binding of Isaac** pelo chat utilizando as descrições do mod: https://github.com/wofsauge/External-Item-Descriptions
 
 ## Como rodar o projeto?
 ### Docker
