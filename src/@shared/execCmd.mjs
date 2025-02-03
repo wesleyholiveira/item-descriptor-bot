@@ -23,8 +23,6 @@ export default async (cmd, args, redisRepository) => {
 			if (matchedElement !== undefined) {
 				cache[cacheKey] = matchedElement;
 			}
-
-			console.log('uepaaa', cache);
 		} else {
 			console.log('Obtendo resposta do cache interno...');
 		}

@@ -27,15 +27,6 @@ handler.setFormatter(
     colorlog.ColoredFormatter("%(log_color)s%(levelname)s:%(name)s:%(message)s")
 )
 
-
-def get_path_cli(args: tuple, path: str):
-    if len(args) > 1:
-        _, input = args
-        return path + f"/{input}", True
-
-    raise Exception(f"Insira a lingua que você deseja popular os dados... {os.listdir(path)}")
-
-
 def main():
     try:
         data_raw_path = "data/raw"

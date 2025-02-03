@@ -1,8 +1,13 @@
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/no-cycle */
 import 'dotenv/config';
 import { createClient } from 'redis';
 import tmi from 'tmi.js';
 import formatItemMessage from './@shared/formatItemMessage.mjs';
-import * as Commands from './commands/index.mjs';
+import CommandService from './services/command.service.mjs';
+import formatItemMessageYT from './@shared/formatItemMessageYT.mjs';
+import * as WebServer from './webserver.mjs';
+
 
 export const BANANA = {
 	lang: process.env?.DESCRIPTION_LANGUAGE ?? "pt-br"
@@ -24,6 +29,7 @@ const run = async () => {
 			database: 0,
 			url,
 		});
+		const commandService = new CommandService(redisClient);
 
 		await twtClient.connect();
 		await redisClient.connect();
@@ -33,25 +39,30 @@ const run = async () => {
 			console.error(err);
 		});
 
-		const sendMessage = (message) => twtClient.say(username, message);
 		twtClient.on('message', async (channel, tags, message, self) => {
 			// Ignore echoed messages.
 			if (self) return;
 
-			if (message.startsWith('!')) {
-				const cmdArgs = message.toLowerCase().split(' ');
-				const cmdString = cmdArgs[0]?.replace('!', '');
-
-				const cmd = Commands[cmdString]?.default;
-				if (!cmd) {
-					return;
-				}
-
-				const result = await cmd(cmdString, cmdArgs.slice(1), redisClient);
-				sendMessage(formatItemMessage(result));
-			}
+			await commandService.parseMsg(message, (parsedMsg) => twtClient.say(
+					username,
+					formatItemMessage(parsedMsg)
+				)
+			);
 		});
+
+		setInterval(async () => {
+			const message = await WebServer.YTService.getCurrentMsg();
+
+			if (message) {
+				await commandService.parseMsg(message, (parsedMsg) => {
+					WebServer.YTService.sendMessage(
+						formatItemMessageYT(parsedMsg)
+					)
+				});
+			}
+		}, process.env?.YOUTUBE_MSG_POOLING ?? 10000);
 	} catch (err) {
+		// eslint-disable-next-line no-console
 		console.log(err);
 	}
 };
