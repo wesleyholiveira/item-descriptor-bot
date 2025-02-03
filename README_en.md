@@ -30,8 +30,11 @@ pip install -r ./scripts/requirements.txt
 - Copy the **.env.example** file and rename it to **.env**
 - Update the data in .env with your Twitch account tokens/client_id:
 ```
-TWITCH_USERNAME=
 TWITCH_TOKEN=
+TWITCH_USERNAME=
+YOUTUBE_CLIENT_ID=
+YOUTUBE_CLIENT_SECRET=
+YOUTUBE_MSG_POOLING=5000
 ```
 - If you want another language, create a new folder inside: *data/raw*, insert the files as previously created for **en/pt-br**:
 

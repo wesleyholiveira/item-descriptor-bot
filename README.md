@@ -26,10 +26,13 @@ docker run <nome-da-imagem>-redis-seed
 
 ## Configurações
 - Copie o arquivo **.env.example** e renomeie para **.env**
-- Altere os dados no **.env** com os tokens/client_id da sua conta na Twitch:
+- Altere os dados no **.env** com os tokens/client_id da sua conta na Twitch/Youtube:
 ```
-TWITCH_USERNAME=
 TWITCH_TOKEN=
+TWITCH_USERNAME=
+YOUTUBE_CLIENT_ID=
+YOUTUBE_CLIENT_SECRET=
+YOUTUBE_MSG_POOLING=5000
 ```
 - Caso queira uma outra lingua crie uma pasta nova dentro de: *data/raw*, insira os arquivos conforme foi previamente criado para **en/pt-br**:
 
