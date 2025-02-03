@@ -4,6 +4,8 @@
 
 🚀 Utiliza as descrições do mod **[External Item Descriptions](https://github.com/wofsauge/External-Item-Descriptions)** para fornecer informações rápidas e precisas sobre os itens do jogo.  
 
+📖 🇺🇸 [Read this README in English](README_EN.md)
+
 ---
 
 ## 📌 **Recursos**
@@ -89,4 +91,4 @@ Este projeto é open-source sob a licença **MIT**.
 ---
 
 ### 🔎 **Quer contribuir ou relatar um bug?**  
-Sinta-se à vontade para abrir uma [issue](https://github.com/wesleyholiveira/item-descriptor-bot/issues) ou entrar em contato!  
+Sinta-se à vontade para abrir uma [issue](https://github.com/wesleyholiveira/item-descriptor-bot/issues) ou entrar em contato!
