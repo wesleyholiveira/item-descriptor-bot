@@ -90,14 +90,3 @@ Este projeto é open-source sob a licença **MIT**.
 
 ### 🔎 **Quer contribuir ou relatar um bug?**  
 Sinta-se à vontade para abrir uma [issue](https://github.com/wesleyholiveira/item-descriptor-bot/issues) ou entrar em contato!  
-
----
-
-### 🔥 **Por que esse README foi otimizado?**  
-- ✅ Organização clara com seções bem definidas.  
-- ✅ Uso de **emojis** para melhorar a legibilidade.  
-- ✅ Estrutura mais escaneável, destacando os pontos principais.  
-- ✅ Melhoria na indexação do GitHub e SEO.  
-- ✅ Adição de um call to action incentivando contribuições e estrelas.  
-
-Agora seu README está muito mais atrativo para novos usuários e contribuidores! 🚀🔥
